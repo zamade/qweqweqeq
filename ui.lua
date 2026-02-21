@@ -1554,13 +1554,16 @@ Grad3.Parent = Sep3;
 			local AvatarStroke = Instance.new("UIStroke");
 			local cardFunctions = {};
 
-			-- Main Card Container
+			-- Main Card Container - Positioned at Bottom
 			CardContainer.Name = "PlayerCard";
 			CardContainer.Parent = MainFramePage;
 			CardContainer.BackgroundColor3 = Color3.fromRGB(20, 10, 10);
 			CardContainer.BackgroundTransparency = 0;
-			CardContainer.Size = UDim2.new(1, 0, 0, 100);
+			CardContainer.Size = UDim2.new(1, -20, 0, 100);
+			CardContainer.Position = UDim2.new(0, 10, 1, -110);
+			CardContainer.AnchorPoint = Vector2.new(0, 1);
 			CardContainer.BorderSizePixel = 0;
+			CardContainer.ZIndex = 50;
 
 			-- Card Background
 			CardBackground.Name = "CardBackground";
