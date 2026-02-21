@@ -609,6 +609,8 @@ function Update:Window(Config)
 		end;
 	end);
 	local uitab = {};
+	-- Store Tab reference for player card
+	osfunc.SidebarTab = Tab;
 	function uitab:Tab(text, img)
 		local BtnStroke = Instance.new("UIStroke");
 		local TabButton = Instance.new("TextButton");
@@ -1541,8 +1543,6 @@ Grad3.Parent = Sep3;
 		end;
 		return main;
 	end;
-	-- Store Tab reference for player card creation
-	osfunc.SidebarTab = Tab;
 	function osfunc:CreatePlayerCard()
 		-- Create player card in the sidebar as a fixed footer
 		local Players = game:GetService("Players");
