@@ -75,7 +75,17 @@ ImageButton.AutoButtonColor = false;
 MakeDraggable(ImageButton, OutlineButton);
 CreateRounded(ImageButton, 10);
 ImageButton.MouseButton1Click:connect(function()
-	(game.CoreGui:FindFirstChild("ZATHEON")).Enabled = not (game.CoreGui:FindFirstChild("ZATHEON")).Enabled;
+	local coreGuiUI = game.CoreGui:FindFirstChild("ZATHEON");
+	if coreGuiUI then
+		coreGuiUI.Enabled = not coreGuiUI.Enabled;
+	end;
+	local playerGui = game.Players.LocalPlayer and game.Players.LocalPlayer:FindFirstChild("PlayerGui") and game.Players.LocalPlayer.PlayerGui;
+	if playerGui then
+		local altUI = playerGui:FindFirstChild("Zatheon") or playerGui:FindFirstChild("ZATHEON");
+		if altUI then
+			altUI.Enabled = not altUI.Enabled;
+		end;
+	end;
 end);
 local NotificationFrame = Instance.new("ScreenGui");
 NotificationFrame.Name = "NotificationFrame";
